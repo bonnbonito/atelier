@@ -45,6 +45,8 @@ function mla_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'mla' ),
+		'left' => esc_html__( 'Left', 'mla' ),
+		'right' => esc_html__( 'Right', 'mla' ),
 		'mobile' => esc_html__( 'Mobile', 'mla' ),
 	) );
 

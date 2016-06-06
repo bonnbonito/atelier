@@ -34,37 +34,22 @@
 		<div class="st-content"><!-- this is the wrapper for the content -->
 			<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
 			<header id="masthead" class="site-header" role="banner">
-				<div id="st-trigger-effects" class="column">
-					<button data-effect="st-effect-1">
-						<div id="nav-icon1">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>		
+				<div class="container">
+					<div id="st-trigger-effects" class="column">
+						<button data-effect="st-effect-1">
+							<div id="nav-icon1">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</button>		
+					</div>
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<div class="left-menu"><?php wp_nav_menu( array( 'theme_location' => 'left' ) ); ?></div>
+						<div class="site-branding"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="<?php bloginfo( 'name' ); ?> Logo"></a></div>
+						<div class="right-menu"><?php wp_nav_menu( array( 'theme_location' => 'right' ) ); ?></div>					
+					</nav><!-- #site-navigation -->
 				</div>
-				<div class="site-branding">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
-
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
-				</div><!-- .site-branding -->
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mla' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
-
-				<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam hic minus doloribus veritatis iusto, quisquam obcaecati? Consequuntur, accusantium, explicabo vitae doloribus ducimus quis neque itaque, totam in excepturi ut cumque.</h1>
