@@ -48,6 +48,7 @@ function mla_setup() {
 		'left' => esc_html__( 'Left', 'mla' ),
 		'right' => esc_html__( 'Right', 'mla' ),
 		'mobile' => esc_html__( 'Mobile', 'mla' ),
+		'footer' => esc_html__( 'Footer', 'mla' )
 	) );
 
 	/*

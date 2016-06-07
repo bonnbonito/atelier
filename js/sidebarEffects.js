@@ -45,22 +45,6 @@
 				}
 			};
 
-		buttons.forEach( function( el, i ) {
-			var effect = el.getAttribute( 'data-effect' );
-
-			el.addEventListener( eventtype, function( ev ) {
-				ev.stopPropagation();
-				ev.preventDefault();
-				container.className = 'st-container'; // clear
-				classie.add( container, effect );
-				setTimeout( function() {
-					classie.add( container, 'st-menu-open' );
-					classie.add( bod, 'st-menu-open')
-				}, 25 );
-				document.addEventListener( eventtype, bodyClickFn );
-			});
-		} );
-
 	}
 
 	init();
